@@ -1,0 +1,47 @@
+syntax:
+	perl -c aspxtraktor_restart.pl
+
+letters := a b c d e f g h i j k l m n o p q r s t u v q w x y z
+
+files1 := $(letters)
+
+files4 := $(foreach firstletter,$(letters),	\
+	$(foreach secondletter,$(letters),	\
+	$(foreach l3,$(letters),		\
+	$(foreach l4,$(letters),		\
+	$(firstletter)$(secondletter)$(l3)$(l4)	\
+	)					\
+	)					\
+	))
+
+files3 := $(foreach firstletter,$(letters),	\
+	$(foreach secondletter,$(letters),	\
+	$(foreach l3,$(letters),		\
+	$(firstletter)$(secondletter)$(l3)	\
+	)					\
+	)					\
+	)
+
+files2 := $(foreach firstletter,$(letters),	\
+	$(foreach secondletter,$(letters),	\
+	$(firstletter)$(secondletter)	        \
+	)					\
+	)					
+
+files := $(files2)
+
+html_files := $(foreach file,$(files),$(file).html)
+xml_files := $(foreach file,$(files),$(file).xml)
+csv_files := $(foreach file,$(files),$(file).csv)
+
+all : $(html_files) # the first rule to follow, from here all other rules are  called
+	echo $(html_files)
+# http://www.gnu.org/s/hello/manual/make/Foreach-Function.html
+# 
+%.htm :  %
+
+% :  
+	 # aspxtraktor.pl 
+	perl ../aspxtraktor.pl   --term=$@   
+
+#$@ is the name of the output of the rule we want.

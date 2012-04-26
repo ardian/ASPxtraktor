@@ -1,0 +1,13 @@
+Test it like this :
+     perl    -I lib/ bin/aspxtraktor.pl --term "software"
+That only processes index pages and saves them but does not download the details.
+
+Detail Pages are processed like this :
+perl    -I lib/ bin/aspxtraktor.pl --term "softwa" --recurse
+
+
+Read in a file into the database like this :
+perl    -I lib/ bin/aspxtraktor.pl --file=output_test/DataExtractor_IPKO_P1_Data4.htm.bz2  
+
+if you want to load the business activity types : add the --loadtype arguement   
+ perl   -I lib/ bin/aspxtraktor.pl --loadtype --file=output_test/DataExtractor_IPKO_P1_Data4.htm.bz2  

@@ -1,0 +1,64 @@
+<html>
+<head>
+
+
+<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- js: extjs -->
+	<script type="text/javascript" src="extjs/ext-all-debug-w-comments.js"></script>	
+
+<script type="text/javascript" >
+    Ext.BLANK_IMAGE_URL = 'extjs/resources/images/default/s.gif';
+</script>
+
+<script type="text/javascript" language="javascript"> 
+
+// now run the search
+function submitSearchCallback(callback, somebool, result){
+
+    var resultText = result.responseText;
+    var jsonData =  Ext.JSON.decode(resultText);
+    var search_string = jsonData.search_string;
+    console.log(search_string);
+    alert("search string was " + search_string);
+}
+
+function submitSearch(){
+    var  business_name_field = Ext.getCmp('business_name_input');
+    if(business_name_field)
+    {
+	var name = business_name_field.getValue();
+	Ext.Ajax.request({url: '/search_name/' + name, callback: submitSearchCallback}); 
+    }
+}
+
+function searchForm(){
+ var win = new Ext.Window(
+     {
+	 xtype:"fieldset",
+	 title:"Search For Business",
+	 autoHeight:true,
+	 items:[{
+	     xtype:"textfield",
+	     id:"business_name_input"	 ,    
+	     fieldLabel:"Business Name",
+	     name:"business_name"	     
+	 },
+		
+		{
+		    xtype : "button",
+		    text : "Search",
+		    handler: function () { 
+			submitSearch ();
+		    }
+		}		
+	       ]
+     });
+    win.show();
+}
+Ext.onReady(searchForm);
+</script>
+</head>
+</html>

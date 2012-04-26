@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE xsl:stylesheet [
+<!ENTITY % lat1 PUBLIC "-//W3C//ENTITIES Latin 1 for XHTML//EN"
+"xhtml-lat1.ent">
+<!ENTITY % symbol PUBLIC "-//W3C//ENTITIES Symbols for XHTML//EN"
+"xhtml-symbol.ent">
+<!ENTITY % special PUBLIC "-//W3C//ENTITIES Special for XHTML//EN"
+"xhtml-special.ent">
+%lat1;
+%symbol;
+%special;
+]>

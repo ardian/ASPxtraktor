@@ -1,0 +1,2 @@
+
+dbicdump -o dump_directory=./lib -o components='["InflateColumn::DateTime"]' ASPXTRAKTOR::Site::ARBK::Schema "dbi:mysql:database=arbk;host=localhost" "arbk_user" "arbkpassword" '{ quote_char => "\"" }'
