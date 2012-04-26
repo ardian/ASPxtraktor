@@ -1,9 +1,11 @@
-Dependencies that must be installed ==== Ubuntu =====
+Dependencies that must be installed to run the software 
+	     ==== Ubuntu =====
 sudo apt-get install libtry-tiny-perl
 sudo apt-get install libwww-mechanize-perl
 sudo apt-get install libyaml-perl
 sudo apt-get install libhtml-treebuilder-xpath-perl
 sudo apt-get install libdbix-class-schema-loader-perl
+sudo apt-get install libcompress-bzip2-perl
 
 Test it like this :
      perl    -I lib/ bin/aspxtraktor.pl --term "software"
