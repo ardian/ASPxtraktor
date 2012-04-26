@@ -1,3 +1,10 @@
+Dependencies that must be installed ==== Ubuntu =====
+sudo apt-get install libtry-tiny-perl
+sudo apt-get install libwww-mechanize-perl
+sudo apt-get install libyaml-perl
+sudo apt-get install libhtml-treebuilder-xpath-perl
+sudo apt-get install libdbix-class-schema-loader-perl
+
 Test it like this :
      perl    -I lib/ bin/aspxtraktor.pl --term "software"
 That only processes index pages and saves them but does not download the details.
