@@ -1,1 +1,0 @@
-while read -r filex.txt; do perl -I lib/ bin/aspxtraktor.pl --loadtype --file=output_test/"filex.txt"; done > test2.txt
